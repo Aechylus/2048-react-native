@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
 import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
+import { RemoveScroll } from 'react-remove-scroll';
 import './Board.css';
 import Direction from './Direction';
 
@@ -232,6 +232,7 @@ class Board extends React.Component {
 
         return (
             <div>
+                <RemoveScroll></RemoveScroll>
                 <GestureRecognizer onSwipe={(direction, state) => this.onSwipe(direction, state)}>
                     <div className="game-over" style={gameOverStyle}>
                         <div className="game-over-overlay" style={fullHeightStyle}></div>
