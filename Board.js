@@ -214,6 +214,11 @@ class Board extends React.Component {
 
 
     render() {
+        const gestureRecognizerConfig = {
+            velocityThreshold: 0.05,
+            gestureIsClickThreshold: 2
+        };
+
         let status = 'Score: ' + this.props.score;
 
         let gameOverStyle = {}
@@ -233,7 +238,10 @@ class Board extends React.Component {
         return (
             <div className="root">
                 <RemoveScroll></RemoveScroll>
-                <GestureRecognizer onSwipe={(direction, state) => this.onSwipe(direction, state)}>
+                <GestureRecognizer
+                    onSwipe={(direction, state) => this.onSwipe(direction, state)}
+                    config={gestureRecognizerConfig}
+                >
                     <div className="game-over" style={gameOverStyle}>
                         <div className="game-over-overlay" style={fullHeightStyle}></div>
                         <div className="game-over-content">
