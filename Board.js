@@ -231,7 +231,7 @@ class Board extends React.Component {
         const grid = this.props.grid;
 
         return (
-            <div>
+            <div className="root">
                 <RemoveScroll></RemoveScroll>
                 <GestureRecognizer onSwipe={(direction, state) => this.onSwipe(direction, state)}>
                     <div className="game-over" style={gameOverStyle}>
