@@ -1,0 +1,94 @@
+.game {
+    background: rgb(251, 248, 241);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.status {
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 50px;
+    color: rgb(119, 110, 101);
+    z-index: 2;
+}
+
+.board {
+    background: rgb(187, 173, 160);
+    display: inline-grid;
+    grid-template-columns: auto auto auto auto;
+    padding: 10px;
+    text-align: center;
+    grid-gap: 10px;
+}
+
+.square {
+    background: rgb(243, 226, 148);
+    font-size: 45px;
+    font-weight: bold;
+    line-height: 100px;
+    height: 100px;
+    width: 100px;
+    text-align: center;
+}
+
+@media only screen and (max-width: 500px) {
+    .status {
+        margin-bottom: calc(100vw / 500 * 30);
+        font-size: calc(100vw / 500 * 50);
+    }
+    .square {
+        height: calc((100vw - 100px) / 4);
+        width: calc((100vw - 100px) / 4);
+        line-height: calc((100vw - 100px) / 4);
+    }
+}
+
+.game-over {
+    opacity: 0;
+    position: absolute;
+    width: 100vw;
+    z-index: 1;
+    transition: 0.75s;
+}
+
+.game-over-overlay {
+    opacity: 0.75;
+    width: inherit;
+    background: rgb(238, 228, 218);
+}
+
+.game-over-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-over-text {
+    font-size: 90px;
+    font-weight: bold;
+    color: rgb(119, 110, 101);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.game-over-button button {
+    border: 5px solid rgb(187, 173, 160);
+    background: rgb(187, 173, 160);
+    color: rgb(251, 248, 241);
+    font-size: 40px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.game-over-button button:hover {
+    background: rgb(187, 173, 160, 0.5);
+    transition: 0.5s;
+}
